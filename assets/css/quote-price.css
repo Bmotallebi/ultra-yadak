@@ -1,0 +1,93 @@
+.uy-cfp-label {
+	display: inline-block;
+	font-weight: 700;
+	font-size: 1.05em;
+	color: var(--uy-cfp-color, #1f3a93);
+}
+
+.uy-cfp-phones {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 12px;
+}
+
+.uy-cfp-phones__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 18px;
+	border-radius: 999px;
+	background: #fff;
+	border: 1.5px solid var(--uy-cfp-color, #1f3a93);
+	color: var(--uy-cfp-color, #1f3a93);
+	font-weight: 700;
+	font-size: .95em;
+	text-decoration: none;
+	line-height: 1;
+	letter-spacing: .02em;
+	transition: background-color .15s ease, color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.uy-cfp-phones__link:hover,
+.uy-cfp-phones__link:focus-visible {
+	background: var(--uy-cfp-color, #1f3a93);
+	color: #fff;
+	text-decoration: none;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+	transform: translateY(-1px);
+}
+
+.uy-cfp-phones__icon {
+	flex: 0 0 auto;
+}
+
+.uy-cfp-phones__link span {
+	direction: ltr;
+}
+
+.uy-cfp-box {
+	margin: 18px 0 24px;
+	padding: 18px;
+	border: 1px solid #e2e6ee;
+	border-radius: 10px;
+	background: #f7f9fc;
+}
+
+.uy-cfp-note {
+	margin: 0 0 14px;
+	font-size: .92em;
+	line-height: 1.9;
+	color: #48506b;
+}
+
+.uy-cfp-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.uy-cfp-btn {
+	flex: 1 1 180px;
+	text-align: center;
+	padding: 13px 18px;
+	border-radius: 8px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: opacity .15s ease;
+}
+
+.uy-cfp-btn:hover {
+	opacity: .88;
+	text-decoration: none;
+}
+
+.uy-cfp-btn--phone {
+	background: var(--uy-cfp-color, #1f3a93);
+	color: #fff;
+}
+
+.uy-cfp-btn--wa {
+	background: #25d366;
+	color: #fff;
+}
