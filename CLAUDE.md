@@ -16,3 +16,9 @@
 2. Add a `Settings.php` in the same folder only if the feature needs admin config.
 3. Register the feature in `includes/Plugin.php::load_features()`.
 4. Add any CSS/JS under `assets/`.
+
+## Commits
+- Use [Conventional Commits](https://www.conventionalcommits.org/): `<type>(<optional scope>): <description>`.
+- Common types: `feat`, `fix`, `refactor`, `style`, `docs`, `chore`, `test`, `perf`.
+- Example: `feat(quote-price): add phone links under PDP label`.
+- Body (optional) explains *why*, wrapped as separate paragraphs/bullets below the subject line.
