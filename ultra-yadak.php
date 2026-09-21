@@ -70,7 +70,16 @@ add_filter( 'woocommerce_is_purchasable', function ( $purchasable, $product ) {
 /** ۲) به‌جای قیمت، متن دلخواه. */
 add_filter( 'woocommerce_get_price_html', function ( $price_html, $product ) {
 	if ( uy_cfp_is_quote_only( $product ) ) {
-		return '<span class="uy-cfp-label">' . esc_html( uy_cfp_get( 'label' ) ) . '</span>';
+		$html = '<span class="uy-cfp-label">' . esc_html( uy_cfp_get( 'label' ) ) . '</span>';
+
+		if ( function_exists( 'is_product' ) && is_product() ) {
+			$html .= '<div class="uy-cfp-phones">'
+				. '<a href="tel:+989143248680">09143248680</a>'
+				. '<a href="tel:+989121077173">09121077173</a>'
+				. '</div>';
+		}
+
+		return $html;
 	}
 	return $price_html;
 }, 10, 2 );
@@ -147,6 +156,9 @@ add_action( 'wp_head', function () {
 	?>
 	<style>
 		.uy-cfp-label{display:inline-block;font-weight:700;font-size:1.05em;color:<?php echo esc_attr( $color ); ?>}
+		.uy-cfp-phones{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+		.uy-cfp-phones a{font-weight:700;text-decoration:none;color:<?php echo esc_attr( $color ); ?>;direction:ltr}
+		.uy-cfp-phones a:hover{text-decoration:underline}
 		.uy-cfp-box{margin:18px 0 24px;padding:18px;border:1px solid #e2e6ee;border-radius:10px;background:#f7f9fc}
 		.uy-cfp-note{margin:0 0 14px;font-size:.92em;line-height:1.9;color:#48506b}
 		.uy-cfp-actions{display:flex;flex-wrap:wrap;gap:10px}
