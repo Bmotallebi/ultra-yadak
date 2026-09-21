@@ -73,9 +73,10 @@ add_filter( 'woocommerce_get_price_html', function ( $price_html, $product ) {
 		$html = '<span class="uy-cfp-label">' . esc_html( uy_cfp_get( 'label' ) ) . '</span>';
 
 		if ( function_exists( 'is_product' ) && is_product() ) {
-			$html .= '<div class="uy-cfp-phones">'
-				. '<a href="tel:+989143248680">09143248680</a>'
-				. '<a href="tel:+989121077173">09121077173</a>'
+			$icon    = '<svg class="uy-cfp-phones__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>';
+			$html   .= '<div class="uy-cfp-phones">'
+				. '<a class="uy-cfp-phones__link" href="tel:+989143248680">' . $icon . '<span dir="ltr">0914 324 8680</span></a>'
+				. '<a class="uy-cfp-phones__link" href="tel:+989121077173">' . $icon . '<span dir="ltr">0912 107 7173</span></a>'
 				. '</div>';
 		}
 
@@ -156,9 +157,21 @@ add_action( 'wp_head', function () {
 	?>
 	<style>
 		.uy-cfp-label{display:inline-block;font-weight:700;font-size:1.05em;color:<?php echo esc_attr( $color ); ?>}
-		.uy-cfp-phones{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-		.uy-cfp-phones a{font-weight:700;text-decoration:none;color:<?php echo esc_attr( $color ); ?>;direction:ltr}
-		.uy-cfp-phones a:hover{text-decoration:underline}
+		.uy-cfp-phones{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+		.uy-cfp-phones__link{
+			display:inline-flex;align-items:center;gap:8px;
+			padding:10px 18px;border-radius:999px;
+			background:#fff;border:1.5px solid <?php echo esc_attr( $color ); ?>;
+			color:<?php echo esc_attr( $color ); ?>;font-weight:700;font-size:.95em;
+			text-decoration:none;line-height:1;letter-spacing:.02em;
+			transition:background-color .15s ease,color .15s ease,box-shadow .15s ease,transform .15s ease;
+		}
+		.uy-cfp-phones__link:hover,.uy-cfp-phones__link:focus-visible{
+			background:<?php echo esc_attr( $color ); ?>;color:#fff;text-decoration:none;
+			box-shadow:0 4px 14px rgba(0,0,0,.12);transform:translateY(-1px);
+		}
+		.uy-cfp-phones__icon{flex:0 0 auto}
+		.uy-cfp-phones__link span{direction:ltr}
 		.uy-cfp-box{margin:18px 0 24px;padding:18px;border:1px solid #e2e6ee;border-radius:10px;background:#f7f9fc}
 		.uy-cfp-note{margin:0 0 14px;font-size:.92em;line-height:1.9;color:#48506b}
 		.uy-cfp-actions{display:flex;flex-wrap:wrap;gap:10px}
