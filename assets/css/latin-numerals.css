@@ -12,6 +12,8 @@
 }
 
 .single-product .summary,
+.single-product .product_title,
+.single-product .entry-title,
 .single-product .woocommerce-Tabs-panel,
 .single-product .woocommerce-product-attributes {
 	font-family: 'uy-latin-digits', 'sc_iranyekan_fa', Tahoma, sans-serif;
