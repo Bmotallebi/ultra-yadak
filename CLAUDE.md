@@ -10,6 +10,7 @@
 - Before adding a helper, a settings getter, a sanitizer, or markup, check whether something equivalent already exists (e.g. `QuotePrice::get()` for options) and reuse/extend it instead of duplicating.
 - Shared behavior used by more than one feature belongs in a shared class/trait, not copy-pasted across feature folders.
 - CSS lives in `assets/css/`, enqueued via `wp_enqueue_style` + `wp_add_inline_style` for dynamic values (e.g. brand color via CSS custom properties). Don't echo raw `<style>` blocks in hooks.
+- Never pass `ULTRA_YADAK_VERSION` as the `wp_enqueue_style`/`wp_enqueue_script` version. Use `UltraYadak\Support\Assets::version('assets/css/whatever.css')` (filemtime-based) so browsers auto-bust cache on every edit — a static constant caused a real bug where CSS fixes didn't show up for users on old cached copies.
 
 ## When adding a new feature
 1. Create `includes/Features/<FeatureName>/<FeatureName>.php` with hook registration in the constructor.

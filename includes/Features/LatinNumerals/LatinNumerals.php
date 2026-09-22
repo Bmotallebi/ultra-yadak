@@ -1,6 +1,8 @@
 <?php
 namespace UltraYadak\Features\LatinNumerals;
 
+use UltraYadak\Support\Assets;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -24,7 +26,7 @@ class LatinNumerals {
 			'uy-latin-numerals',
 			ULTRA_YADAK_URL . 'assets/css/latin-numerals.css',
 			array(),
-			ULTRA_YADAK_VERSION
+			Assets::version( 'assets/css/latin-numerals.css' )
 		);
 	}
 }

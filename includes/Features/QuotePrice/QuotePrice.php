@@ -1,6 +1,8 @@
 <?php
 namespace UltraYadak\Features\QuotePrice;
 
+use UltraYadak\Support\Assets;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -181,7 +183,7 @@ class QuotePrice {
 			'uy-cfp-quote-price',
 			ULTRA_YADAK_URL . 'assets/css/quote-price.css',
 			array(),
-			ULTRA_YADAK_VERSION
+			Assets::version( 'assets/css/quote-price.css' )
 		);
 
 		$color = self::get( 'color' ) ?: '#1f3a93';
