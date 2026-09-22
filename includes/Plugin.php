@@ -3,6 +3,7 @@ namespace UltraYadak;
 
 use UltraYadak\Features\QuotePrice\QuotePrice;
 use UltraYadak\Features\QuotePrice\Settings;
+use UltraYadak\Features\LatinNumerals\LatinNumerals;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -27,6 +28,7 @@ final class Plugin {
 
 	private function load_features(): void {
 		new QuotePrice();
+		new LatinNumerals();
 
 		if ( is_admin() ) {
 			new Settings();

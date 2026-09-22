@@ -1,0 +1,18 @@
+/*
+ * فونت قالب (sc_iranyekan_fa) گلیف ارقام لاتین را با شکل فارسی جایگزین کرده.
+ * این @font-face فقط بازه‌ی U+0030 تا U+0039 (ارقام 0-9) را از یک فونت
+ * سیستمی لاتین‌امن می‌گیرد؛ برای بقیه‌ی کاراکترها مرورگر خودکار می‌رود سراغ
+ * فونت بعدی در استک (همان فونت اصلی قالب).
+ */
+@font-face {
+	font-family: 'uy-latin-digits';
+	unicode-range: U+0030-0039;
+	src: local('Segoe UI'), local('Tahoma'), local('Helvetica Neue'), local('Arial');
+	font-display: swap;
+}
+
+.single-product .summary,
+.single-product .woocommerce-Tabs-panel,
+.single-product .woocommerce-product-attributes {
+	font-family: 'uy-latin-digits', 'sc_iranyekan_fa', Tahoma, sans-serif;
+}
