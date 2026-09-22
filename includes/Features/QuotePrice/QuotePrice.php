@@ -136,9 +136,6 @@ class QuotePrice {
 		$note  = self::get( 'note' );
 
 		if ( ! $phone && ! $wa ) {
-			echo '<div class="uy-cfp-box"><p class="uy-cfp-note">'
-				. esc_html__( 'شماره تماس در تنظیمات افزونه وارد نشده است.', 'uy-cfp' )
-				. '</p></div>';
 			return;
 		}
 
