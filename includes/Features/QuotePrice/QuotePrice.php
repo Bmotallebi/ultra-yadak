@@ -82,14 +82,16 @@ class QuotePrice {
 
 		$html = '<span class="uy-cfp-label">' . esc_html( self::get( 'label' ) ) . '</span>';
 
-		if ( function_exists( 'is_product' ) && is_product() ) {
+		// حلقه‌ی «محصولات مشابه» هم داخل PDP رندر می‌شود، پس is_product() به‌تنهایی
+		// کارت‌های مشابه را هم شامل می‌شد؛ فقط محصولِ اصلیِ همان صفحه باید شماره بگیرد.
+		if ( function_exists( 'is_product' ) && is_product() && get_queried_object_id() === $product->get_id() ) {
 			$html .= $this->render_phones_html();
 		}
 
 		return $html;
 	}
 
-	/** لیست شماره‌های تماس زیر عنوان استعلام قیمت (فقط در PDP). */
+	/** لیست شماره‌های تماس زیر عنوان استعلام قیمت (فقط محصول اصلی PDP). */
 	private function render_phones_html(): string {
 		$phones = array(
 			array( 'number' => '+989143248680', 'label' => '0914 324 8680' ),
