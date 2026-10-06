@@ -4,6 +4,7 @@ namespace UltraYadak;
 use UltraYadak\Features\QuotePrice\QuotePrice;
 use UltraYadak\Features\QuotePrice\Settings;
 use UltraYadak\Features\LatinNumerals\LatinNumerals;
+use UltraYadak\Features\SliderRedraw\SliderRedraw;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -29,6 +30,7 @@ final class Plugin {
 	private function load_features(): void {
 		new QuotePrice();
 		new LatinNumerals();
+		new SliderRedraw();
 
 		if ( is_admin() ) {
 			new Settings();
