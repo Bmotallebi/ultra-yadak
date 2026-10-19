@@ -1,0 +1,10 @@
+.uy-enamad {
+	display: flex;
+	justify-content: center;
+	padding: 24px 16px;
+}
+
+.uy-enamad img {
+	max-width: 110px;
+	height: auto;
+}

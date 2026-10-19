@@ -5,6 +5,7 @@ use UltraYadak\Features\QuotePrice\QuotePrice;
 use UltraYadak\Features\QuotePrice\Settings;
 use UltraYadak\Features\LatinNumerals\LatinNumerals;
 use UltraYadak\Features\SliderRedraw\SliderRedraw;
+use UltraYadak\Features\EnamadSeal\EnamadSeal;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -31,6 +32,7 @@ final class Plugin {
 		new QuotePrice();
 		new LatinNumerals();
 		new SliderRedraw();
+		new EnamadSeal();
 
 		if ( is_admin() ) {
 			new Settings();
