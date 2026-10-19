@@ -54,10 +54,12 @@ class EnamadSeal {
 
 	private function markup( string $modifier = '' ): string {
 		$trust = 'https://trustseal.enamad.ir/?id=' . self::ID . '&Code=' . self::CODE;
-		$logo  = 'https://trustseal.enamad.ir/logo.aspx?id=' . self::ID . '&Code=' . self::CODE;
+
+		// logo.aspx ای‌نماد 403 برمی‌گرداند؛ تصویر لوگو از خود سایت سرو می‌شود.
+		$logo = add_query_arg( 'ver', Assets::version( 'assets/img/enamad.png' ), ULTRA_YADAK_URL . 'assets/img/enamad.png' );
 
 		return sprintf(
-			'<div class="uy-enamad %4$s"><a referrerpolicy="origin" target="_blank" href="%1$s"><img referrerpolicy="origin" src="%2$s" alt="" style="cursor:pointer" code="%3$s"></a></div>',
+			'<div class="uy-enamad %4$s"><a referrerpolicy="origin" target="_blank" href="%1$s"><img referrerpolicy="origin" src="%2$s" width="125" height="136" alt="نماد اعتماد الکترونیکی" style="cursor:pointer" code="%3$s"></a></div>',
 			esc_url( $trust ),
 			esc_url( $logo ),
 			esc_attr( self::CODE ),
