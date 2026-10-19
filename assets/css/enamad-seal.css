@@ -1,10 +1,15 @@
 .uy-enamad {
-	display: flex;
-	justify-content: center;
-	padding: 24px 16px;
+	margin-top: 16px;
 }
 
 .uy-enamad img {
 	max-width: 110px;
 	height: auto;
+}
+
+.uy-enamad--fallback {
+	display: flex;
+	justify-content: center;
+	margin-top: 0;
+	padding: 24px 16px;
 }
